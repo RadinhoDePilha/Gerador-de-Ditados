@@ -4,7 +4,7 @@ import random
 def inf_2_3aps():
     lista = []
     lista_3aps = []
-    with open('Gerador de Ditados/verbos_inf.csv') as file:
+    with open('verbos_inf.csv') as file:
         for l in file.readlines():
             lista.append(l[:-1].lstrip())
                 
@@ -17,7 +17,7 @@ def inf_2_3aps():
     return lista_3aps
 
 def grava3aps(lista):       
-    with open('Gerador de Ditados/verb_3ap.csv', 'w') as file:
+    with open('verb_3ap.csv', 'w') as file:
         for w in lista:
             file.write(f'{w}, ')
 
@@ -35,9 +35,9 @@ if __name__ == '__main__':
     d = int(input('Quantos ditados deseja?\n-'))
 
     for x in range(d):
-        l_animais = random.choice(listador('Gerador de Ditados/animais.csv'))
-        l_adjetivos = random.choice(listador('Gerador de Ditados/adjetivos.csv'))
-        l_verbos = random.choice(listador('Gerador de Ditados/verb_3ap.csv'))
+        l_animais = random.choice(listador('animais.csv'))
+        l_adjetivos = random.choice(listador('adjetivos.csv'))
+        l_verbos = random.choice(listador('verb_3ap.csv'))
 
         if l_animais[-1] == "a" and l_adjetivos[-1] == "o":
             l_adjetivos = l_adjetivos[:-1] + "a"
